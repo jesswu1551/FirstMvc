@@ -1,0 +1,40 @@
+﻿@using MVC_TEST.Models
+@model List<Employee>
+
+@{
+    ViewBag.Title = "StrongTypeViewList";
+}
+
+<h2>StrongTypeViewList</h2>
+
+@*<ul>
+        @foreach (var item in Model)
+        {
+            <li>@item.Id</li>
+            <li>@item.Name</li>
+            <li>@item.Phone</li>
+            <li>@item.Email</li>
+        }
+    </ul>*@
+
+<div>
+    <ul>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            for (int j = i + 1; j < Model.Count; j++)
+            {
+                if (Model[i].Id == Model[j].Id)
+                {
+                    Model.RemoveAt(j);
+                    j--;
+                    continue;
+                }
+            }
+            <li>@Model[i].Id</li>
+            <li>@Model[i].Name</li>
+            <li>@Model[i].Phone</li>
+            <li>@Model[i].Email</li>
+        }
+    </ul>
+
+</div>

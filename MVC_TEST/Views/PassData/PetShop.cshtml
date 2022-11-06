@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "PetShop";
+}
+
+<h2>@ViewData["Company"]</h2>
+<h2>@ViewBag.Address</h2>
+
+<p>寵物清單：</p>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item</li>
+    }
+</ul>

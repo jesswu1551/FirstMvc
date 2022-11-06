@@ -171,10 +171,12 @@
     <Compile Include="Controllers\FriendsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PassDataController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\FriendsContext.cs" />
     <Compile Include="Models\FriendsModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -246,6 +248,9 @@
     <Content Include="Views\Friends\Edit.cshtml" />
     <Content Include="Views\Friends\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutFriend.cshtml" />
+    <Content Include="Views\PassData\PetShop.cshtml" />
+    <Content Include="Views\PassData\StrongTypeView.cshtml" />
+    <Content Include="Views\PassData\StrongTypeViewList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
