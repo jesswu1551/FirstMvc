@@ -20,6 +20,11 @@ namespace MVC_TEST.Controllers
             return View(db.Employees.ToList());
         }
 
+        public ActionResult IndexBootstrap()
+        {
+            return View(db.Employees.ToList());
+        }
+
         // GET: EmployeeContext/Details/5
         public ActionResult Details(int? id)
         {
