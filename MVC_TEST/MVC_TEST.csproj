@@ -268,6 +268,7 @@
     <Content Include="Views\Razor\RazorStatement.cshtml" />
     <Content Include="Views\Student\CalcScores.cshtml" />
     <Content Include="Views\Student\Scores.cshtml" />
+    <Content Include="Views\Student\CalcScoresPure.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
