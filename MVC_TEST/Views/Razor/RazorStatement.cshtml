@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "RazorStatement";
+    var score = 95;
+
+    var ports = new[]
+    {
+new { portNum = 80, description = "是 HTTP 使用的 port 號" },
+new { portNum = 110, description = "是 POP3 使用的 port 號" },
+new { portNum = 143, description = "是 IMAP 使用的 port 號" },
+new { portNum = 587, description = "是 SMTP 使用的 port 號" },
+};
+}
+
+<h2>RazorStatement</h2>
+
+<div id="if_else">
+    @score
+    @if (score < 60)
+    {
+        <p>分數不及格</p>
+    }
+    else if (score >= 60 && score < 85)
+    {
+        <p>及格</p>
+    }
+    else if (score >= 85 && score < 90)
+    {
+        <p>及格，高分喔～</p>
+    }
+    else
+    {
+        <p>恭喜，很優秀！</p>
+    }
+</div>
+
+<div id="switch_case">
+    @{var portNum = 587; }
+    @switch (portNum)
+    {
+        case 80:
+            <p>@portNum, 是 HTTP 使用的 port 號</p>
+            break;
+        case 110:
+            <p>@portNum, 是 POP3 使用的 port 號</p>
+            break;
+        case 143:
+            <p>@portNum, 是 IMAP 使用的 port 號</p>
+            break;
+        case 587:
+            <p>@portNum, 是 SMTP 使用的 port 號</p>
+            break;
+        default:
+            <p>@portNum, 查無紀錄</p>
+            break;
+    }
+</div>
+
+<ul id="forloop">
+    @for (int i = 0; i < ports.Length; i++)
+    {
+        <li>@ports[i].portNum: @ports[i].description</li>
+    }
+</ul>
+
+<ul id="foreach">
+    @foreach (var item in ports)
+    {
+        <li>@item.portNum: @item.description</li>
+    }
+</ul>
+
+<div id="while">
+    @{ var index = 0; }
+    @while (index < ports.Length)
+    {
+        var port = ports[index];
+        <p>@port.portNum, @port.description</p>
+        index++;
+    }
+
+    @{ var idx = 0; }
+    @do
+    {
+        var port = ports[idx];
+        <p>@port.portNum, @port.description</p>
+        idx++;
+    } while (idx < ports.Length);
+</div>
