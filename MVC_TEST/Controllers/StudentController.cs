@@ -67,5 +67,27 @@ namespace MVC_TEST.Controllers
 
             return View(students);
         }
+
+        public ActionResult GlobalRazorHelper()
+        {
+            int topId = 0;
+            int topScore = 0;
+
+            foreach (var student in students)
+            {
+                student.Total = student.Chinese + student.Math + student.English;
+
+                if (student.Total > topScore)
+                {
+                    topId = student.Id;
+                    topScore = student.Total;
+                }
+            }
+
+            ViewBag.topId = topId;
+            ViewBag.topScore = topScore;
+
+            return View(students);
+        }
     }
 }

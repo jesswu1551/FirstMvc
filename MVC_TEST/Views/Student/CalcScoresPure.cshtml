@@ -6,6 +6,22 @@
     ((List<Student>)Model).ForEach(x => x.Total = x.Chinese + x.Math + x.English);
 
     int topScore = Model.Max(s => s.Chinese + s.Math + s.English);
+
+    @helper DisplayScore(int score)
+    {
+        if (score < 60)
+        {
+            <td class="poor">@score</td>
+        }
+        else if (score >= 95)
+        {
+            <td class="excellent">@score</td>
+        }
+        else
+        {
+            <td>@score</td>
+        }
+    }
 }
 <style>
     th {
@@ -55,44 +71,10 @@
         <tr>
             <td>@Html.DisplayFor(modelItem => item.Id)</td>
             <td>@Html.DisplayFor(modelItem => item.Name)</td>
-            @if (item.Chinese < 60)
-            {
-                <td class="poor">@Html.DisplayFor(modelItem => item.Chinese)</td>
-            }
-            else if (item.Chinese >= 95)
-            {
-                <td class="excellent">@Html.DisplayFor(modelItem => item.Chinese)</td>
-            }
-            else
-            {
-                <td>@Html.DisplayFor(modelItem => item.Chinese)</td>
-            }
 
-            @if (item.Math < 60)
-            {
-                <td class="poor">@Html.DisplayFor(modelItem => item.Math)</td>
-            }
-            else if (item.Math >= 95)
-            {
-                <td class="excellent">@Html.DisplayFor(modelItem => item.Math)</td>
-            }
-            else
-            {
-                <td>@Html.DisplayFor(modelItem => item.Math)</td>
-            }
-
-            @if (item.English < 60)
-            {
-                <td class="poor">@Html.DisplayFor(modelItem => item.English)</td>
-            }
-            else if (item.English >= 95)
-            {
-                <td class="excellent">@Html.DisplayFor(modelItem => item.English)</td>
-            }
-            else
-            {
-                <td>@Html.DisplayFor(modelItem => item.English)</td>
-            }
+            @DisplayScore(item.Chinese);
+            @DisplayScore(item.Math);
+            @DisplayScore(item.English);
 
             @if (item.Total == topScore)
             {

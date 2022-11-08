@@ -1,0 +1,26 @@
+﻿th {
+    color: #fff;
+    background-color: #000;
+    text-align: center;
+}
+
+.poor {
+    color: #fff;
+    background: #c81c1c;
+}
+
+.excellent {
+    color: #fff;
+    background-color: #1a3de8;
+}
+
+.top1 {
+    background-color: #e4a219;
+    border: 2px solid #000;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.top1::after {
+    content: " 總分排名第一!";
+}
